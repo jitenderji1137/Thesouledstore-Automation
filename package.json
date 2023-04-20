@@ -1,0 +1,23 @@
+{
+  "name": "thesouledstore-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jitenderji1137/Thesouledstore-Automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jitenderji1137/Thesouledstore-Automation/issues"
+  },
+  "homepage": "https://github.com/jitenderji1137/Thesouledstore-Automation#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "cypress": "^12.10.0"
+  }
+}
