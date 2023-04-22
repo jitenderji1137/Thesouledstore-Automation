@@ -9,8 +9,8 @@ class Homepage_TSc_02{
     // To verify if the Contact Button is visible on homepage
     Contact_Button_on_Homepage_TC_09(){
         cy.visit('https://www.thesouledstore.com/');
-        cy.xpath("(//a[@class='pointer text-uppercase'])[2]").should("be.visible");
-        cy.xpath("(//a[@class='pointer text-uppercase'])[2]").should("have.text","Contact Us");
+        cy.xpath("(//a[@class='pointer text-uppercase'])[2]").should("be.visible").screenshot();
+        cy.xpath("(//a[@class='pointer text-uppercase'])[2]").should("have.text","Contact Us").screenshot();
         cy.log("Test Case TC_09 has passed...");
     }
 
@@ -18,7 +18,7 @@ class Homepage_TSc_02{
     // To validate if the Contact button is click able
     Contact_Button_on_Homepage_TC_10(){
         cy.visit('https://www.thesouledstore.com/');
-        cy.xpath("(//a[@class='pointer text-uppercase'])[2]").click();
+        cy.xpath("(//a[@class='pointer text-uppercase'])[2]").screenshot().click();
         cy.wait(3000);
         cy.url().should("equal","https://www.thesouledstore.com/contact-us");
         cy.go("back");
@@ -29,8 +29,8 @@ class Homepage_TSc_02{
     // To verify if the Track Order Button is visible on homepage
     Track_Order_Button_on_Homepage_TC_11(){
         cy.visit('https://www.thesouledstore.com/');
-        cy.xpath("(//a[@class='pointer text-uppercase'])[1]").should("be.visible");
-        cy.xpath("(//a[@class='pointer text-uppercase'])[1]").should("have.text","Track Order");
+        cy.xpath("(//a[@class='pointer text-uppercase'])[1]").should("be.visible").screenshot();
+        cy.xpath("(//a[@class='pointer text-uppercase'])[1]").should("have.text","Track Order").screenshot();
         cy.log("Test Case TC_11 has passed...");
     }
 
@@ -38,7 +38,7 @@ class Homepage_TSc_02{
     // To validate if the Track Order button is click able
     Track_Order_Button_on_Homepage_TC_12(){
         cy.visit('https://www.thesouledstore.com/');
-        cy.xpath("(//a[@class='pointer text-uppercase'])[1]").click();
+        cy.xpath("(//a[@class='pointer text-uppercase'])[1]").screenshot().click();
         cy.wait(3000);
         cy.url().should("equal","https://www.thesouledstore.com/login?redirect=%2Forders");
         cy.go("back");
@@ -51,7 +51,7 @@ class Homepage_TSc_02{
     Download_app_Button_on_Homepage_TC_13(){
         cy.visit('https://www.thesouledstore.com/');
         cy.get('.d-inline-flex').should("be.visible");
-        cy.get('.d-inline-flex').should("have.text","\n              Download App \n            ");
+        cy.get('.d-inline-flex').should("have.text","\n              Download App \n            ").screenshot();
         cy.log("Test Case TC_13 has passed...");
     }
 
@@ -61,7 +61,7 @@ class Homepage_TSc_02{
     // To validate if the Download app button is click able
     Download_app_Button_on_Homepage_TC_14(){
         cy.visit('https://www.thesouledstore.com/');
-        cy.get('.d-inline-flex').click();
+        cy.get('.d-inline-flex').screenshot().click();
         // cy.wait(10000);
         // cy.url();
         // cy.url().should("eq","https://play.google.com/store/apps/details?id=com.thesouledstore");
@@ -77,6 +77,7 @@ class Homepage_TSc_02{
         cy.visit('https://www.thesouledstore.com/');
         cy.get("a[href='/women']").should("be.visible");
         cy.get("a[href='/women']").should("have.text","WOMEN ");
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } })
         cy.log("Test Case TC_15 has passed...");
     }
 
@@ -87,7 +88,7 @@ class Homepage_TSc_02{
         cy.visit('https://www.thesouledstore.com/');
         cy.viewport(1400, 800);
         cy.xpath("//a[normalize-space()='MEN']").click();
-        cy.xpath("//a[normalize-space()='WOMEN']").click();
+        cy.xpath("//a[normalize-space()='WOMEN']").click().screenshot();
         cy.wait(3000);
         cy.url().should("equal","https://www.thesouledstore.com/women");
         cy.go("back");
@@ -101,7 +102,8 @@ class Homepage_TSc_02{
     Kids_Button_on_Homepage_TC_17(){
         cy.visit('https://www.thesouledstore.com/');
         cy.get("a[href='/kids']").should("be.visible");
-        cy.get("a[href='/kids']").should("have.text","KIDS ");
+        cy.get("a[href='/kids']").should("have.text","KIDS ").screenshot();
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
         cy.log("Test Case TC_17 has passed...");
     }
 
@@ -112,7 +114,8 @@ class Homepage_TSc_02{
     Kids_Button_on_Homepage_TC_18(){
         cy.visit('https://www.thesouledstore.com/');
         cy.xpath("//a[normalize-space()='MEN']").click();
-        cy.xpath("//a[normalize-space()='KIDS']").click();
+        cy.xpath("//a[normalize-space()='KIDS']").click().screenshot();
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
         cy.wait(3000);
         cy.url().should("equal","https://www.thesouledstore.com/kids");
         cy.go("back");
@@ -127,6 +130,7 @@ class Homepage_TSc_02{
         cy.visit('https://www.thesouledstore.com/');
         cy.get("a[href='/men']").should("be.visible");
         cy.get("a[href='/men']").should("have.text","MEN  ");
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
         cy.log("Test Case TC_19 has passed...");
     }
 
@@ -136,7 +140,7 @@ class Homepage_TSc_02{
     Men_Button_on_Homepage_TC_20(){
         cy.visit('https://www.thesouledstore.com/');
         cy.xpath("//a[normalize-space()='KIDS']").click();
-        cy.xpath("//a[normalize-space()='MEN']").click();
+        cy.xpath("//a[normalize-space()='MEN']").click().screenshot();
         cy.wait(3000);
         cy.url().should("equal","https://www.thesouledstore.com/men");
         cy.go("back");
@@ -149,7 +153,7 @@ class Homepage_TSc_02{
     // To verify if the Logo is visible on homepage
     Logo_TC_21(){
         cy.visit('https://www.thesouledstore.com/');
-        cy.get(".pointer.navbar-brand").should("be.visible");
+        cy.get(".pointer.navbar-brand").should("be.visible").screenshot();
         cy.log("Test Case TC_21 has passed...");
     }
 
@@ -162,7 +166,7 @@ class Homepage_TSc_02{
         cy.wait(3000);
         cy.url().should("equal","https://www.thesouledstore.com/contact-us");
         cy.wait(3000);
-        cy.get(".pointer.navbar-brand").click();
+        cy.get(".pointer.navbar-brand").screenshot().click();
         cy.wait(2000);
         cy.url().should("equal","https://www.thesouledstore.com/men");
         cy.log("Test Case TC_22 has passed...");

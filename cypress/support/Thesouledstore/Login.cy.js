@@ -2,7 +2,7 @@ var chai = require('chai');
 var assert = chai.assert;
 var expect = chai.expect;
 var should = chai.should();
-const Number = "9838962087";
+const Number = "7428723247";
 const email = "lovif3947@stash.com";
 require('cypress-xpath');
 class Login_TSc_01{
@@ -10,7 +10,7 @@ class Login_TSc_01{
     // To verify if the Login icon is visible on the home page
     Login_Button_TC_01(){
       cy.visit('https://www.thesouledstore.com/');
-      cy.get('.nav-item.navicon.dropdown.iconlink').should('be.visible');
+      cy.get('.nav-item.navicon.dropdown.iconlink').should('be.visible').screenshot();
       cy.log("Test Case TC_01 has passed...")
     }
 
@@ -18,7 +18,7 @@ class Login_TSc_01{
     // To validate if the Login icon is click able on the home page ang redirect to login page
     Login_Button_TC_02(){
       cy.visit('https://www.thesouledstore.com/');
-      cy.get('.nav-item.navicon.dropdown.iconlink').should('be.visible');  
+      cy.get('.nav-item.navicon.dropdown.iconlink').should('be.visible').screenshot();  
       cy.get('.nav-item.navicon.dropdown.iconlink').click();
       cy.wait(3000);
       cy.url().should("equal","https://www.thesouledstore.com/login?redirect=%2F")
@@ -32,8 +32,9 @@ class Login_TSc_01{
       cy.visit('https://www.thesouledstore.com/');
       cy.get('.nav-item.navicon.dropdown.iconlink').click();
       cy.wait(3000);
-      cy.xpath("//div[text()='Login with The Souled Store']").should("have.text","Login with The Souled Store");
+      cy.xpath("//div[text()='Login with The Souled Store']").should("have.text","Login with The Souled Store").screenshot();
       cy.get("span[class='nav-link']").should("be.visible");
+      cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
       cy.get("span[class='nav-link']").click();
       cy.log("Test Case TC_03 has passed...")
     }
@@ -50,6 +51,7 @@ class Login_TSc_01{
         cy.get("input[placeholder='Choose New Password *']").type("jitender123@@").should("have.value","jitender123@@");
         cy.get("input[placeholder='Confirm Password *']").type("jitender123@@").should("have.value","jitender123@@");
         cy.xpath("//input[@type='mobile']").type(Number).should("have.value",Number);
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } })
         cy.xpath("//label[@class='form-check-label']//label[1]").click();
         cy.get("button[type='submit']").click();
         cy.log("Test Case TC_04 has passed...");
@@ -60,8 +62,9 @@ class Login_TSc_01{
       Login_Page_TC_05(){
         cy.visit('https://www.thesouledstore.com/');
         cy.get('.nav-item.navicon.dropdown.iconlink').click();
-        cy.xpath("//div[text()='Login with The Souled Store']").should("have.text","Login with The Souled Store");
+        cy.xpath("//div[text()='Login with The Souled Store']").should("have.text","Login with The Souled Store").screenshot();
         cy.get("form[method='POST']").should("be.visible");
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
         cy.log("Test Case TC_05 has passed...")
       }
 
@@ -71,8 +74,9 @@ class Login_TSc_01{
     Login_Page_TC_06(){
         cy.visit('https://www.thesouledstore.com/');
         cy.get('.nav-item.navicon.dropdown.iconlink').click();
-        cy.get("input[placeholder='Enter Phone Number']").type(Number).should("have.value",Number);
+        cy.get("input[placeholder='Enter Phone Number']").type(Number).should("have.value",Number).screenshot();
         cy.get("button[type='submit']").should("be.visible");
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
         cy.log("Test Case TC_06 has passed...");
     }
 
@@ -90,6 +94,7 @@ class Login_TSc_01{
         cy.xpath("(//input[contains(@type,'number')])[4]").type("4");
         cy.get("button[type='submit']").click();
         cy.xpath("//div[text()='Wrong OTP! Please enter correct OTP.']").should("have.text","Wrong OTP! Please enter correct OTP.");
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
         cy.log("Test Case TC_07 has passed...");
     }
 
@@ -99,6 +104,7 @@ class Login_TSc_01{
         cy.visit('https://www.thesouledstore.com/');
         cy.get('.nav-item.navicon.dropdown.iconlink').click();
         cy.get("input[placeholder='Enter Phone Number']").type(Number).should("have.value",Number);
+        cy.screenshot({ clip: { x: 0, y: 0, width: 1500, height: 700 } });
         cy.get("button[type='submit']").click();
         cy.wait(10000);
         cy.get("button[type='submit']").click();
