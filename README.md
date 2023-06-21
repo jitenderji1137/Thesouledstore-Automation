@@ -12,7 +12,7 @@ As This Project was related to web testing, We need to test few features of Thes
 ## Implemented with Cypress
 
 ### [1. Report with Cypress][Report with Cypress]
-[Report with Cypress]:https://mobilettestingwithjavascript.pages.dev/
+[Report with Cypress]:https://jitenderji1137.github.io/Thesouledstore-Automation/cypress/reports/html/index.html
 <div align="center">
 <img src="https://github.com/jitenderji1137/Thesouledstore-Automation/assets/113350806/b7d07041-c3f7-480b-aa07-f44cbfc86cd3" alt="logo" width="100%" height="auto" />
 </div>
